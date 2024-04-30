@@ -95,6 +95,7 @@ class Jobs:
         print("Lista de fuentes de informacion de situacion actual")
         print("Social: Whatsapp, Agenda, Correo, Linkedin")
         print("Financiera: Banco patagonia homebanking, Santander homebanking, AirTM app, MercadoPago app, Banco Nacion App, Sube App")
+        print("SERVICIOS de casas: www.naturgy.com.ar, edenordigital.com:Edenor1Lola y Aysa solo va por correo")
         print("Conocimiento: Notas en papel, Zettelkasten")
         self.espaciado_final()
 
