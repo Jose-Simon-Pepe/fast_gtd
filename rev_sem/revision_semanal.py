@@ -67,6 +67,7 @@ class Jobs:
         #TODO: action: Abrir lista de delegados
         print("No introduzcas en inbox, directamente a siguiente accion o calendario")
         #TODO: abrir calendario calcurse
+        self._system.open_cal()
         #TODO: Abrir $HOME con el comando TD ADD de manera iterativa
         
 
@@ -211,10 +212,12 @@ def run_long_future_revision():
 
 
 def run_past_revision():
-    j= Jobs()
+    j= Jobs(system=system())
     j.actualizar_estado_de_bloqueo_de_acciones()
     j.revisar_acciones_de_proyectos_mas_importantes()
     j.delegados()
+    #TODO: improve design, tools used for steps should only be managed into step
+    j._system.close_cal()
     j.recopilar()
     j.actualizar_situacion_actual()
     print("Lo lograste! Revision semanal pasado completada")
