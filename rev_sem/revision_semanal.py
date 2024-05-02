@@ -1,10 +1,13 @@
 import os
+from system import system
 ## TODO: Hacer que exista una lista de funciones y por cada una el iniciar las llame y formatee con un espacio y espaciado final
 
 
 
 class Jobs:
 
+    def __init__(self,system=None):
+        self._system=system
 
     def espaciado(self):
         os.system("clear")  
@@ -138,12 +141,13 @@ class Jobs:
     def revisar_calendario_siguiente_semana(self):
         self.espaciado()
         print("Abri el calendario")
-        #TODO: Action: abrir calcurse en la semana siguiente a iniciar lunes
+        self._system.open_cal()
         print("Revisa la semana siguiente")
         print("")
         print("-> Buscar que compromisos voy a tener")
         print("-> Procesar: ¿Que deberia hacer para maximizar el exito de esos compromisos?")
-        self.espaciado_final()
+        self.esperar()
+        self._system.close_cal()
 
     def registro_revision(self):
         #TODO: El registro puede hacerse digitalmente de manera programatica siguiendo las respuestas del usuario, hacerlo de manera programatica
