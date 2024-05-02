@@ -175,15 +175,13 @@ class Jobs:
         print("")
         print("- Dado que para el proceso de planificacion se usan herramientas como excalidraw,")
         print("-> debe volcar esos archivos con un nombre apropiado")
-        
 
     @waitable_step
-def fin_revision_futuro():
-    j= Jobs()
-    print("Lo lograste! Revision semanal futuro completada")
-    os.system("clear")
-    print("Ahora, vuelque tanto las decisiones tomadas como el metodo elegido para cada una.")
-    
+    def fin_revision_futuro(self):
+        j= Jobs()
+        print("Lo lograste! Revision semanal futuro completada")
+        os.system("clear")
+        print("Ahora, vuelque tanto las decisiones tomadas como el metodo elegido para cada una.")
 
 def run_short_future_revision():
     j= Jobs(system=system())
@@ -193,7 +191,7 @@ def run_short_future_revision():
     j.revisar_calendario_siguiente_semana()
     #FIX: system should be dcalled into step
     j._system.close_cal()
-    fin_revision_futuro()
+    j.fin_revision_futuro()
 
 def run_long_future_revision():
     j= Jobs()
@@ -205,7 +203,7 @@ def run_long_future_revision():
     j.revisar_situacion_actual()
     j.revision_algun_dia_tal_vez()
     j.revision_estudio()
-    fin_revision_futuro()
+    j.fin_revision_futuro()
 
 
 def run_past_revision():
