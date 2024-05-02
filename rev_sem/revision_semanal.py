@@ -64,10 +64,14 @@ class Jobs:
     @waitable_step
     def delegados(self):
         print("Revisa lista de delegados y determina que hacer")
-        #TODO: action: Abrir lista de delegados
+        self._system.open_delegate(path="/home/peace/situacion_actual/social/delegado/todo.txt")
+        self.esperar()
+        self._system.close_delegates()
         print("No introduzcas en inbox, directamente a siguiente accion o calendario")
         #TODO: abrir calendario calcurse
         self._system.open_cal()
+        self.esperar()
+        self._system.close_cal()
         #TODO: Abrir $HOME con el comando TD ADD de manera iterativa
         
 
@@ -217,6 +221,7 @@ def run_past_revision():
     j.actualizar_estado_de_bloqueo_de_acciones()
     j.revisar_acciones_de_proyectos_mas_importantes()
     j.delegados()
+    j._system.close_delegates()
     #TODO: improve design, tools used for steps should only be managed into step
     j._system.close_cal()
     j.recopilar()

@@ -13,3 +13,10 @@ class system:
 
     def close_study_necesities(self):
         syscall("killall fzf")
+
+    def open_delegate(self,path:str=None):
+        syscall(f"tmux split 'more {path} | fzf'")
+
+
+    def close_delegates(self):
+        syscall("killall fzf")
