@@ -81,7 +81,7 @@ class Jobs:
     @waitable_step
     def revisar_calendario(self):
         print("-> Revisa tu calendario de la semana vivida")
-        #TODO: ACTION: Abrir calcurse posicionado a comienzo de semana
+        self._system.open_cal()
         print("")
         print("-> Responde:")
         #TODO: Por cada dia, iniciar calcurse posicionado en ese dia y responder, por cada dia, estas siguintes 3 preguntas de manera iterativa
@@ -186,7 +186,9 @@ class Jobs:
 def run_short_future_revision():
     j= Jobs(system=system())
     j.registro_revision()
+    #TODO: improve design, tools used for steps should only be managed into step
     j.revisar_calendario()
+    j._system.close_cal()
     #TODO: improve design, tools used for steps should only be managed into step
     j.revisar_calendario_siguiente_semana()
     #FIX: system should be dcalled into step
