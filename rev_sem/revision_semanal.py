@@ -191,6 +191,8 @@ def run_short_future_revision():
     j.revisar_calendario()
     #TODO: improve design, tools used for steps should only be managed into step
     j.revisar_calendario_siguiente_semana()
+    #FIX: system should be dcalled into step
+    j._system.close_cal()
     fin_revision_futuro()
 
 def run_long_future_revision():
@@ -198,6 +200,8 @@ def run_long_future_revision():
     j.registro_revision()
     j.revisar_calendario()
     j.revisar_calendario_siguiente_semana()
+    #FIX: system should be dcalled into step
+    j._system.close_cal()
     j.revisar_situacion_actual()
     j.revision_algun_dia_tal_vez()
     j.revision_estudio()
