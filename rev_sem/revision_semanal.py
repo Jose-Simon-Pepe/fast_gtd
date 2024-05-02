@@ -196,9 +196,11 @@ def run_short_future_revision():
     j.fin_revision_futuro()
 
 def run_long_future_revision():
-    j= Jobs()
+    j= Jobs(system=system())
     j.registro_revision()
+    #TODO: improve design, tools used for steps should only be managed into step
     j.revisar_calendario()
+    j._system.close_cal()
     j.revisar_calendario_siguiente_semana()
     #FIX: system should be dcalled into step
     j._system.close_cal()
