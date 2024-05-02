@@ -37,7 +37,7 @@ class Jobs:
         print("-> Abrir Gantt de estudio")
         #TODO: Action: abrir archivo de gantt estudio pdf y herramienta de gantt online
         print("-> Revisar los topicos activos del proyecto en gantt")
-        #TODO: Action: Abrir lista de necesidades de estudio en situacion actual
+        self._system.open_study_necesities(path="~/situacion_actual/cognitiva/conocimiento/estudio/todo.txt")
         print("-> Ajusta los tiempos necesarios")
         print("-> Incorpora o elimina topicos segun las necesidades de estudio en td para el proyecto")
         #TODO: Action: Abrir lista de necesidades de estudio en situacion actual
@@ -208,6 +208,7 @@ def run_long_future_revision():
     j.revisar_situacion_actual()
     j.revision_algun_dia_tal_vez()
     j.revision_estudio()
+    j._system.close_study_necesities()
     j.fin_revision_futuro()
 
 
